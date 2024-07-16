@@ -7,12 +7,12 @@ spring:
         - id: product_route
           uri: lb://ProductServiceJune24
           predicates:
-            - Path=/products/*
+            - Path=/products/**
 
         - id: user_route
           uri: lb://UserServiceMay24
           predicates:
-            - Path=/users/*
+            - Path=/users/**
 eureka:
   client:
     register-with-eureka: true
@@ -20,4 +20,4 @@ eureka:
     service-url:
       defaultZone: http://localhost:8761/eureka
 server:
-  port: ${PORT}
+  port: 8080
